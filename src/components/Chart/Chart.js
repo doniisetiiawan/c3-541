@@ -7,8 +7,10 @@ class Chart extends Component {
     this.updateChart();
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    this.updateChart();
+  componentDidUpdate(prevProps) {
+    if (this.props.chartType !== prevProps.chartType) {
+      this.updateChart();
+    }
   }
 
   render() {
